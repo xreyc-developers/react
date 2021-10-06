@@ -1,0 +1,26 @@
+## COMPONENTS
+- works like a block, a reusable block
+- App.js is the main component used by React but you can change it
+- component in react is just a JavaScript function with special feature which is
+not available on a normal JavaScript.
+
+## COMPONENT TREE
++ App (Rendered directly with the HTMK Page)
+  + Header
+    - Logo
+    - Menu
+    - Profile
+  + Tasks
+    - Task
+    - Task
+    - Task
+
+## COMPONENTS EXPORT AND IMPORT
+- components should start with a Capital letter so that React will be able to
+interpret it as component.
+- lower case are considered as default html element
+- you must only have one root element per return statement
+
+## WHY USE A COMPONENT
+- reusability
+- separation of concerns

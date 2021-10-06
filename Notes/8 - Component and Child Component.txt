@@ -1,0 +1,13 @@
+## COMPONENT AND CHILD COMPONENT
+
+# Component - is a block where you can create UI and functionalities inside it
+- it cant be used as a wrapper of the other element or component
+
+# Child Component - is a block a special kind of component that has a placeholder
+where you can put Component or html element inside it.
+- commonly used for templating, it has an specific design pattern.
+- it can be use to wrap other component
+
+# COMPONENT AS A ROOT WRAPPER
+- component cannot be used as a root wrapper
+- child component can be used as a root wrapper

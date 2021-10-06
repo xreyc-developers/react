@@ -1,0 +1,9 @@
+## EXPRESSION ON JSX
+function Item() {
+  const expenseDate = new Date();
+  return (
+    <div>
+      {expenseDate}
+    </div>
+  )
+}

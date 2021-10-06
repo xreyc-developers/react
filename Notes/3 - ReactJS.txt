@@ -1,0 +1,22 @@
+## COMPONENT
+- component is a specific section of a page
+- it is a building blocks of a page
+- component focuses on reusability
+
+## REACT IS DECLARATIVE
+- you don't have to create all the JavaScript nodes or manual create of DOM,
+ReacJS does it for us.
+
+## CREATING REACT APP
+npx create-react-app foldername
+
+## INDEX.JS
+- the main js that will be run by the React
+
+## REACT-DOM
+syntax:
+ReactDOM.render(COMPONENT, ELEMENT TO APPEND THE COMPONENT)
+
+example:
+import ReactDOM from 'react-dom';
+ReactDOM.render(<App />, document.getElementById('root'))

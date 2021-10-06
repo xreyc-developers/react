@@ -1,0 +1,15 @@
+  ## REACT IS DECLARATIVE
+
+  # JAVASCRIPT IS IMPERATIVE
+  const para = document.createElement('p');
+  para.textContent = 'This is available';
+  document.getElementById('root').append(para);
+
+  # REACT IS DECLARATIVE
+  function App() {
+    render (
+      <div>
+        <p>This is available</p>
+      </div>
+    )
+  }

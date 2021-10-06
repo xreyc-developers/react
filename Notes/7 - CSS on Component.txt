@@ -1,0 +1,20 @@
+## CSS ON COMPONENT
+- on react you can import CSS inside JavaScript directly which is not normal on
+JavaScript.
+
+# Adding a css file
+import './location/file'
+
+# Using a Class
+return (
+  <div className="class">
+  </div>
+)
+
+# CLASSNAME IS A PROPERTY
+- class name is a property, you can get its value if you use it on a component
+- behind the scene, react takes the className property to used as a styling
+- but if you use it on a custom component, it will not work since we are not
+using it.
+- if using className on ang normal html, react takes it as a class
+- if using className on a component, react takes it as a property

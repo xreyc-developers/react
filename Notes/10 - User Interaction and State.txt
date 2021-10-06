@@ -1,0 +1,32 @@
+## USER INTERACTION AND STATE
+
+## EVENTS AND EVENT HANDLERS
+# VANILLA JAVASCRIPT
+  document.getElementById('button').addEventListener('click',()=>{})
+  or
+  <button on-click="functionA()">Click</button>
+# REACT
+  <button onClick={functionA()}>Click</button>
+
+## HOW REACT WORKS
+- when React is loaded, it convert all the JSX into HTML and JavaScript
+- React does not repeat after rendering the DOM at first load
+- everything is reevaluated at first load from the root js to components
+
+## STATE
+- allows us to declare values as state
+- since react render only at first load, we will not be able to change on the
+rendered DOM, here is where we use state
+- it handles variables on react
+- when the state changes, the component is reevaluated
+- state is not a react specific concept but a key concept of react
+
+## STATE ARE DIFFERENT FROM A REGULAR VARIABLE
+- only a state can trigger an reevaluation after the first render of react
+- every time the state changes, react reevaluates the component render
+- regular variable cannot trigger reevaluation
+- react ignores regular variables, so it wont trigger anything even it is changed
+
+## STATE FUNCTION
+useState - is one of the react hook
+- react hooks must be called only inside a component function
