@@ -5,7 +5,8 @@ import Card from '../Templates/Card';
 
 // props can be named to anything
 const ExpenseItem = (props) => {
-    const [title, setTitle] = useState(props.title);
+    const [title, setTitle] = useState(props.title)
+    
     const clickHandler = () => {
         setTitle("Updated");
     }
