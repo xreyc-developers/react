@@ -30,3 +30,6 @@ rendered DOM, here is where we use state
 ## STATE FUNCTION
 useState - is one of the react hook
 - react hooks must be called only inside a component function
+- return two values, first is the variable you set, the second one is a function
+use to update the variable you set
+- use to register a state for specific component
