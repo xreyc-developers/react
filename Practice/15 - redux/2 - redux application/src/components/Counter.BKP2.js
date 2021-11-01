@@ -1,7 +1,7 @@
-// ########### FOR MULTIPLE SLICE STORE (REDUX TOOLKIT) ###########
+// ########### FOR SINGLE SLICE STORE (REDUX TOOLKIT) ###########
 import { useSelector, useDispatch } from 'react-redux';
 
-import { counterActions } from '../store/counter';
+import { counterActions } from '../store/index';
 
 import classes from './Counter.module.css';
 
@@ -9,8 +9,8 @@ const Counter = () => {
   const dispatch = useDispatch();
   // SUBSCRIBE TO REDUX STORE
   // ON UNMOUNT THE SUBSCRIPTION IS AUTOMATICALLY REMOVED
-  const counter = useSelector(state => state.counter.counter);
-  const show = useSelector(state => state.counter.showCounter);
+  const counter = useSelector(state => state.counter);
+  const show = useSelector(state => state.showCounter);
 
   const incrementHandler = () => {
     // dispatch({ type: 'increment' });

@@ -1,7 +1,5 @@
-// ########### FOR MULTIPLE SLICE STORE (REDUX TOOLKIT) ###########
+// ########### FOR REDUX ONLY STORE ###########
 import { useSelector, useDispatch } from 'react-redux';
-
-import { counterActions } from '../store/counter';
 
 import classes from './Counter.module.css';
 
@@ -9,26 +7,23 @@ const Counter = () => {
   const dispatch = useDispatch();
   // SUBSCRIBE TO REDUX STORE
   // ON UNMOUNT THE SUBSCRIPTION IS AUTOMATICALLY REMOVED
-  const counter = useSelector(state => state.counter.counter);
-  const show = useSelector(state => state.counter.showCounter);
+  const counter = useSelector(state => state.counter);
+  const show = useSelector(state => state.showCounter);
 
   const incrementHandler = () => {
-    // dispatch({ type: 'increment' });
-    dispatch(counterActions.increment()); // { type: SOME UNIQUE IDENTIFIER}
+    dispatch({ type: 'increment' });
   }
 
   const decrementHandler = () => {
-    // dispatch({ type: 'decrement' });
-    dispatch(counterActions.decrement());
+    dispatch({ type: 'decrement' });
   }
 
   const increaseHandler = () => {
-    // dispatch({ type: 'increase', amount: 5 });
-    dispatch(counterActions.increase(10)); // { type: SOME UNIQUE IDENTIFIER, payload: THE INPUT }
+    dispatch({ type: 'increase', amount: 5 });
   }
 
   const toggleCounterHandler = () => {
-    dispatch(counterActions.toggleCounter());
+    dispatch({ type: 'toggle' });
   };
 
   return (
