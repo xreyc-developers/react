@@ -33,3 +33,17 @@
 ## HOW REDUX WORKS
 - one data (state) store
 - you can store everything in a centralize way
+- never directly manipulate data in redux
+- components can subscribe to the store
+# CENTRAL DATA (STATE)
+  - all state are stored here
+# COMPONENTS
+  - subscribe to the redux state
+  - component triggers actions
+# ACTIONS
+  - components dispatch/trigger actions
+  - redux forwards action to the reducer
+# REDUCER FUNCTION
+  - responsible for mutating or changing the store data
+  - not the useReducer hook
+  - reducer is a general concept on programming
