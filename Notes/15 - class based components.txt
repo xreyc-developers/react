@@ -1,0 +1,26 @@
+## CLASS BASED COMPONENTS
+- components can also be defined as JS classes where a render() method defines
+the to-be-rendered output.
+- this rarely used, this is used on the old days.
+- in the past, you have to use class-based components to manage state (below v.16.8)
+
+SYNTAX:
+class Product extends Component {
+  render() {
+    return <h2>Hello</h2>
+  }
+}
+
+## LIFE CYCLE
+- you can't use current react hooks
+- you cannot hooks like useEffect()
+# CLASS HOOKS
+* componentDidMount()
+  - runs when component is mounted (was evaluated and rendered)
+  - this is the equivalent to useEffect(...,[]) (with no dependencies)
+* componentDidUpdate()
+  - called once component updated (was evaluated and updated)
+  - this is the equivalent to userEffect(...,[dependency]) (with dependency)
+* componentWillUnmount()
+  - called right before component is unmounted (remove from DOM)
+  - equivalent to useEffect(() => { return () => {...}},[]) (the cleanup function)

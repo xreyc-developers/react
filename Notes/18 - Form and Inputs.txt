@@ -1,0 +1,26 @@
+## FORM AND INPUTS
+
+# STATES
+1. Submitted
+- validate when user click submit
+- for final validation
+- cannot validate during and after input
+PROBLEM
+- you have to submit first before everything is validated
+
+2. Losing Focus (On Blur)
+- when user leaves specific field
+- good when you want to validate at the end of inputs
+- cannot validate during input
+PROBLEM
+- if invalid occurs, on next input, you will not be able to validate the field
+immediately when the user input again unless the user stop.
+- the state valid or invalid state will remain unless you stop so that the field
+will be evaluated
+
+3. On Every Keystroke
+- every time the user inputs something
+- validation on every keystroke
+PROBLEM
+- since every input is evaluated, an error might automatically occur without
+letting the user finish his/her input

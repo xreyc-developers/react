@@ -1,0 +1,25 @@
+## JSX LIMITATIONS
+- adjacent root elements returns an error
+- everything must be wrapped under one element
+- if everything is wrapped with div, we will have a problem called '<div> Soup'
+- div Soup means, that if the elements are compiled, there will be a lot of unnecessary
+div element wrapping a list of element.
+- many div wrapping, may sometimes break styling and too many too many element
+- the lesser the html element the better
+
+
+## SOLUTIONS
+# WRAPPER COMPONENT: creating a wrapper component that automatically returns its children.
+const Wrapper = props => props.children
+export default Wrapper
+
+# FRAGMENTS Using fragments: this does not render a div wrapping element
+- frament was a component wrapper pre-made by react developers
+import React from 'react';
+<React.Fragment></React.Fragment>
+or
+<></>
+
+OR
+import {Fragment} from 'react';
+<Fragment></Fragment>

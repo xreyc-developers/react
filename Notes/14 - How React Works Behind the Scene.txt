@@ -1,0 +1,90 @@
+## HOW REACT WORKS
+- react is a JavaScript library for composing UI
+- is all about component
+
+######################### REACT AND REACT DOM #########################
+# REACT (LOGIC) - Virtual DOM (Only on memory)
+- React does not know the web and the browser, it just know how to work with components
+- it knows only its built-in logic/functions like, component, state and many more
+- React hand over the information to React DOM
+- React has a concept called the virtual DOM which has a component tree.
+- Components are re-evaluated and re-executed every time the props or the state change.
+# REACT DOM (UI) - Real DOM (Renders the actual DOM)
+- React DOM does the work to bring html element/UI of the app
+- Receives the information from React and renders the UI
+- Know the real DOM, converts the virtual DOM to real DOM
+- If React component are updated, React DOM changes only places that are updated on the real DOM
+- the reason, which DOM updates only specific parts of the DOM when the virtual DOM changes id because
+of the performance.
+
+# REACT AND REACT DOM FLOW
+- Onload React will create the virtual DOM
+- React will pass the virtual DOM to the React DOM
+- React DOM will convert the virtual DOM to real DOM
+- If react component updated by revaluation triggered by the user.
+- React will create an updated Virtual DOM and pass it to the React DOM
+- React DOM will create real DOM based on the changes on the virtual DOM
+- React DOM renders only the updated area of the DOM not re-render the whole DOM
+
+# How component works
+- every time the state or context is updated, the whole component is re-evaluated
+- change in the mother component will also result a re-evaluation to child component
+even if you do not passed any state to the child
+- child component are re-executed because they a part of the parents result
+
+######################### REACT MEMO #########################
+- allows us to optimize functional components
+- it tells react, to see the props the component gets and check the current value
+if equivalent to the past value
+- if equivalent, component execution will be skipped
+
+# NOTE
+- it stores the previous props values then compare it to the new props
+- it will cause performance issue
+- it depends your use case, you might trade specific use case to performance
+- it depends on the content of your props
+- use this if the child component has a huge component tree
+- use this if props contains small data only
+
+# HOW FUNCTION PROPS BEHAVE
+On this case, the button will be re-rendered because the function used for its event is
+re-created due to the re-execution of the component, therefor the functions are always
+changing on its value since it is re-executed/recreated on re-execution
+
+# USECALLBACK
+- enable us to store function so that function will not be re-executed every time the component
+is re-evaluated
+- since function is now store, we will be able to store it on same location in memory not a new
+instance of the same function
+- function is a lock scoped
+- everything will be store on memory, the very first state of the function, including the data
+used on its creation
+- if you put an if statement inside the useCallback with no dependencies, everything is on freeze
+on that condition
+
+######################### HOW STATE WORKS #########################
+- state and component is a separate thing
+- reacts create a state behind the scene
+- useState is manage by react for us
+- state is created at the very first load of the component, in which react can able to memorize it
+and know where component it belongs
+- when reevaluation is done, the state will no longer be created or reinitiated because it
+already exist on memory.
+- react knows which component a state belongs to
+
+# STATE UPDATES AND SCHEDULING
+- every time we initiate an update to the state, it schedules an update for the state
+- state is not automatically updated, but updated based on the scheduled update
+- sometimes state might not be the most updated version if pull it because the update for it might be
+still on going
+- data Book - the record where the state updated schedules are placed
+- it might feel instant updated sometimes but no. it just that process on updating happen to fast.
+- react prioritize the most important data to be captured, for example react might take the input
+in screen than displaying because input is a high priority.
+- once booking via Book of state is done, react then will reevaluate the component.
+- all update made for the state are recorded accordingly but it doesn't they are executed immediately
+because some task might be a memory intensive task.
+- if you are dependent on the latest update of the state, use the function(prevState) inside of the
+setUpdate of the state.
+- if there are MULTIPLE state update at the same function, react will schedule them as ONE batch scheduling
+of booking then re-evaluation so that there no error will occur.

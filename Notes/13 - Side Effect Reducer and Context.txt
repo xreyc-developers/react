@@ -1,0 +1,80 @@
+### EFFECT
+- the main job of react is to render the UI and react to the user input then reevaluate and re-render the UI.
+- everything that concerns on re evaluation and re-render UI that includes the events and actions that are
+used to achieve it.
+
+### SIDE EFFECTS
+- something that runs in response with the action of other
+- something that does something other than focuses on the UI screen
+- sending HTTP request
+- storing on local storage
+- timers that running behind the scene
+- side effect should not be put on the component directly, it must be put somewhere else.
+- if we put some task on the component side, it may cause infinite loop.
+for example: setting a state from the server, every time we set a value from the server,
+everything is reevaluated, so that request to the server is reinitiated then another
+reevaluation is done to (infinity)
+- we can use this for user input for implementing de-bouncing effect
+- avoid passing an entire object to the dependencies
+
+# HANDLING SIDE EFFECT
+- useEffect(()=>{}, [dependencies]);
+- first argument - executed after all components are evaluated if the specified dependencies changed
+- second argument - the dependencies, the dependencies effects the function if changed
+- another function that is made to run special task for react.
+
+### REDUCERS
+- for complex state
+  - manage multiple state that belongs together
+  - manage multiple state that are updated at the same time
+- useState() sometime become buggy at some scenarios
+- useReducer() can be use as replacement to state if you need "more powerful state management"
+
+SYNTAX:
+const [state, dispatchFn] = useReducer(reduceFn, initialState, initFn);
+* state - state snapshot
+* dispatchFn - works differently from stateUpdate function, instead of updating directly the state,
+you will have to dispatch a function to update the state which is the first argument of the reducer (reduceFn)
+* reduceFn - gets the latest snapshot and the action of last dispatch
+    reduceFn(prevState, action) => NewState
+* initialState - the initial state
+* initialFn - the function to set the initial state
+
+PROBLEM WITH STATE
+// THIS MAY CAUSE AN ERROR BECAUSE THE ENTERED PASSWORD SNAPSHOT MIGHT NOT BE THE LASTEST SNAPSHOP
+// WE WILL NOT BE ABLE TO GET THE LATEST SNAPSHOT OF THE OTHER STATE BECAUSE WE ARE USING ISVALID
+// STATE WHICH WE CAN ONLY GET
+// DEPENDING ON OTHER STATE MIGHT CAUSE AN ERROR
+// IN THIS CASE WE HAVE TO USE REDUCERS
+
+WHEN TO USESATE AND USEREDUCER
+# useState
+- use for simple state management
+- main state management tool
+- independent piece of data
+- state updates are easy and limited to few kind of things
+- if you are not using object as a state
+# useReducer
+- use for complex state management
+- if you have object as a state
+- has more capability to handle complex logic
+- managing related data that needs to be updated
+
+
+### CONTEXT API
+- it enables us to centralize our logic, so that we can use it everywhere
+
+## LIMITATIONS OF CONTEXT
+- is not optimized for high frequency changes
+- shouldn't be used to replace ALL component communication and props
+- short prop chains should not be used with context
+
+### RULES OF HOOKS
+1. Only call react hooks in React Functions
+  - React Component Functions
+  - Custom Hooks
+  * you cannot use hooks inside a function other than these two
+2. Only call React Hooks at the Top Level
+  - Don't call them in nested functions
+  - Don't call them in any block statements
+3. useEffect(): Always add everything you refer to inside of useEffect() as a dependency

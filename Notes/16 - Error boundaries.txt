@@ -1,0 +1,7 @@
+## ERROR BOUNDARIES
+- errors must not affect the other part of the component
+- an error will crash your application
+- we must handle that error so that it wont affect the whole application
+- errors must be isolated
+
+TO HANDLE ERROR: use TRY CATCH BLOCK

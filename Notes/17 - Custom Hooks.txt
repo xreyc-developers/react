@@ -1,0 +1,4 @@
+## CUSTOM HOOKS
+- are just regular functions like the built-in hooks
+- they can outsource stateful logics into re-usable functions
+- unlike regular functions, custom hooks can use other react hooks and react state

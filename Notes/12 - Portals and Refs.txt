@@ -1,0 +1,64 @@
+## PORTALS
+- enables an element to be rendered somewhere else.
+- like modal component, which must be rendered on the top of the html dom.
+- instead of rendering modal along with the elements which we are using list
+elements, it will be rendered somewhere else.
+
+USAGE:
+@ index.html
+<div id="backdrop-root"></div>
+
+@ Component
+import ReactDOM from 'react-dom';
+const Backdrop = props => {
+  return <div>Hello</div>
+}
+{ReactDOM.createPortal(<Backdrop/>, document.getElementById('backdrop-root'))}
+
+
+## REFS
+- creates a connection between html element and the javascript code.
+- it gets the actual node of the element.
+- works similar to javasscript selectors.
+- this does not reevaluate the DOM.
+- you can manipulate HTML element using ref but not using react dom but native
+dom which is available on native javascript.
+
+## DIFFERENCE BETWEEN STATE AND REFS
+- state cannot directly communicate to get data from the element, you have to
+create an event listener in order to get its data.
+- on state, dom is controlled by react.
+- reference can directly communicate to the element, just place a ref to then
+element and you will be able to get its value automatically without adding some
+event listeners per keystroke of a keyboard or interaction.
+- on ref, DOM is not controlled by react.
+
+## STATE AND REF USE CASES
+- if you want to get a value from the inputs and reset it, use ref.
+- ref is good for getting value quickly without creating a large logic.
+- if you want to get data and manipulate the DOM, use state
+- state is good for storing data for the user interaction and view also
+for manipulation of the DOM.
+
+
+## FORWARD REF
+- enable us to trigger function inside a component from outside
+- this does not follow the common flow of the react
+
+import { useRef, useImperativeHandle } from 'react';
+React.forwardRef((props, ref) => {
+  const inp = useRef()
+
+  const fnA = () => {
+    inp.current.focus()
+  }
+
+  // this will be triggered outside
+  useImperativeHandle(ref, () => {
+    return {
+      focus: fnA
+    }
+  })
+
+  return <input ref={inp}/>
+})

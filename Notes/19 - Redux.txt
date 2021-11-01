@@ -1,0 +1,35 @@
+## REDUX
+- is a cross component app-wide state
+
+## TYPES OF STATE
+# Local State
+  - belongs to a single component
+  - using useState or useReducer
+# Cross-Component State
+  - state that used on different component via props or event
+  - using props
+# App-Wide State (Redux or react context)
+  - state for the entire app
+  - all component can access
+  - use case: user authentication
+  - an alternative for react context
+
+## REACT CONTEXT VS REDUX
+# REACT CONTEXT
+  * ADVANCETAGE
+    - good for small and medium application
+  * DISADVANTAGE
+    - complex setup/management
+    - you can build one big provider for a list of state but things will become
+    bloated.
+    - if you split the context into many state management you will have nested
+    wrapper in order to implement app wide state
+    - performance, good only for low frequency changes
+# REDUX
+  - can be able to manage multiple state without a bloated functionality
+  - can able to handle high frequency changes
+
+
+## HOW REDUX WORKS
+- one data (state) store
+- you can store everything in a centralize way
