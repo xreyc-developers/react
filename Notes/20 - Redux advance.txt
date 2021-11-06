@@ -1,0 +1,15 @@
+## REDUX ADVANCE
+- reducers must be pure, side-effect free and synchronous.
+- reducers just takes input and produce an output nothing more.
+- reducers must not have asynchronous code inside.
+
+## WHERE SHOULD SIDE-EFFECT AND ASYNC TASK BE EXECUTED
+- on the component (eg. useEffect)
+- inside the action creator
+  - redux allows us to run asynchronous function inside action creator
+# SYNCHRONOUS, SIDE-EFFECT FREE (Data transformation)
+  - prefer reducer
+  - avoid actions creators and components
+# ASYNCHRONOUS CODE WITH SIDE EFFECT
+  - prefer action creators or components
+  - never use reducers
