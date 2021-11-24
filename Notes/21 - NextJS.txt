@@ -1,0 +1,26 @@
+## NEXT JS
+
+# TWO TYPES OF GENERATION
+- Static Generation
+- Server Side Generation
+
+# STATIC GENERATION (THIS IS EXECUTED ON THE BUILD PROCESS)
+# getStaticProps
+- not executed on the server and client
+- a reserved words
+- this is executed during prerendering stage
+- this will wait for data fetching then render the application on the server side.
+- this can be asynchronous
+# Problem
+- data could be outdated, since it is rendered on the build process
+- solution is to use revalidate property
+# REVALIDATION
+// THIS IS THE NUMBER OF SECONDS NEXT JS WILL WAIT
+// UNTIL IT REGENERATE THE PAGE ON REQUEST (ON THE SERVER)
+// THIS WILL UPDATE THE PRE-GENERATED PAGES
+// THIS IS GOOD IF THE DATA DOESN'T CHANGE FREQUENTY
+
+## SERVER SIDE GENERATION
+- the request is generated on fly during user request
+# getServerSideProps
+- reserved function for pre-prerendering (server side)
